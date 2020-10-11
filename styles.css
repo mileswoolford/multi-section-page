@@ -1,7 +1,15 @@
 /* Add a black background color to the top navigation */
 .topnav {
+    /*display: none;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
     background-color: #333;
     overflow: hidden;
+}
+
+.topnav:target {
+    display: block;
 }
 
 /* Style the links inside the navigation bar */
@@ -27,7 +35,19 @@
     color: white;
 }
 
+
+.topnav a.inactive {
+    display: none;
+}
+
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
     display: none;
+}
+
+body {
+    background-image: url("pizza.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
