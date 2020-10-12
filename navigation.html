@@ -3,102 +3,94 @@
 
 <head>
     <meta charset="UTF-8">
-    <title></title>
-    <style>
-
-
-
-    </style>
-
+    <title>Adesso Pizza</title>
     <script src="https://kit.fontawesome.com/da55bcf2eb.js" crossorigin="anonymous"></script>
+<!--    TODO: make the background stretch to the entire browser-->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 
 <body>
 
+    <div class="display">
+        
+        <div class="topnav">
+            <a onclick="showMenu()"><i class="fa fa-utensils"></i> menu</a>
+            <a onclick="showContact()"><i class="fa fa-phone"></i> contact us</a>
+            <a onclick="showAbout()"><i class="fa fa-info"></i> about us</a>
+        </div>
 
-    <div class="topnav" id="myTopnav">
-        <a href="#home"> <i class="fa fa-fw fa-home"></i> Home</a>
-        <a href="#menu"><i class="fa fa-utensils"></i> Menu</a>
-        <a href="#contact"><i class="fa fa-phone"></i> Contact us</a>
-        <a href="#about"><i class="fa fa-info"></i> About us</a>
-<!--        <a href="javascript:void(0);" class="icon" onclick="myFunction()">-->
-<!--            <i class="fa fa-bars"></i>-->
-<!--        </a>-->
+<!--        TODO: add stuff to menu, perhaps a different column for various sizes of pizza-->
+        <div id="menu">
+            <br><br><br>
+            <h3>pizza</h3>
+            <table>
+                <tr>
+                    <td>classic marinara</td>
+                    <td>$5.99</td>
+                </tr>
+                <tr>
+                    <td>meat-lovers</td>
+                    <td>$10.99</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="contact">
+            <br><br><br>
+            <h3>contact us</h3>
+            <table>
+                <tr>
+                    <td>phone</td>
+                    <td>(720) 725-1775</td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td><a href="mailto:mileswoolford@gmail.com">mileswoolford@gmail.com</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="about">
+            <br><br><br>
+            <h3>about us</h3>
+            <p>My great grandfather was born in Italy. He emigrated to the United States in 1902 and brought our family's secret recipes with him.</p>
+            <p>Those recipes were passed down, generation to generation, where they are still made today using the same, natural ingredients that we've been using for more than 100 years.</p>
+
+        </div>
+
     </div>
-
-<!--    <img alt="Pizza" class="center;" src="img/pizza.jpeg" width="100%">-->
-<!--    <button class="btn" onclick="expandHamburger()"><i class="fa fa-hamburger fa-5x"></i> options</button>-->
-
-
-    <div id="menu">
-        <p>This is a menu</p>
-    </div>
-
-    <div id="contact">
-        <p>This is the contact</p>
-    </div>
-
-    <div id="about">
-        <p>This is the about section</p>
-    </div>
-
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-<!--    <p> The quick brown fox jumps over the lazy dog.</p>-->
-
-
 
 </body>
 
 <script>
 
+    // TODO: make these functions "DRY" (i.e. don't repeat yourself)
 
+    function hideAll() {
+        document.getElementById("menu").style.display = "none";
+        document.getElementById("contact").style.display = "none";
+        document.getElementById("about").style.display = "none";
 
-    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-    function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-            x.className += " responsive";
-        } else {
-            x.className = "topnav";
-        }
+        console.log("menu, contact, and about have been hidden")
+    }
+
+    function showMenu() {
+        hideAll()
+        document.getElementById("menu").style.display = "block";
+        console.log("menu displayed")
+    }
+
+    function showContact() {
+        hideAll()
+        document.getElementById("contact").style.display = "block";
+        console.log("menu displayed")
+    }
+
+    function showAbout() {
+        hideAll()
+        document.getElementById("about").style.display = "block";
+        console.log("menu displayed")
     }
 
 </script>
