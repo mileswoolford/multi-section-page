@@ -1,6 +1,6 @@
 .display {
     background:
-        radial-gradient(circle, transparent 5%, var(--color-v) 85%),
+        radial-gradient(circle, transparent 10%, var(--color-v) 75%),
         linear-gradient(to right, var(--color), var(--color)),
         url('images/pizza.jpeg');
     background-repeat: no-repeat;
@@ -13,13 +13,17 @@
     background-attachment: fixed;
 
     --color-v: black;
-    --color: darkgrey;
+    --color: grey;
 
+    position: absolute;
+    bottom: 0;
+    top: 50px;
+    width: 100%;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
+    font-size: xx-large;
     color: white;
 }
 

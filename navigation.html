@@ -10,10 +10,10 @@
 </head>
 
 
-<body>
+<body onload="hideAll()">
 
     <div class="display">
-        
+
         <div class="topnav">
             <a onclick="showMenu()"><i class="fa fa-utensils"></i> menu</a>
             <a onclick="showContact()"><i class="fa fa-phone"></i> contact us</a>
@@ -22,7 +22,6 @@
 
 <!--        TODO: add stuff to menu, perhaps a different column for various sizes of pizza-->
         <div id="menu">
-            <br><br><br>
             <h3>pizza</h3>
             <table>
                 <tr>
@@ -37,7 +36,6 @@
         </div>
 
         <div id="contact">
-            <br><br><br>
             <h3>contact us</h3>
             <table>
                 <tr>
@@ -52,7 +50,6 @@
         </div>
 
         <div id="about">
-            <br><br><br>
             <h3>about us</h3>
             <p>My great grandfather was born in Italy. He emigrated to the United States in 1902 and brought our family's secret recipes with him.</p>
             <p>Those recipes were passed down, generation to generation, where they are still made today using the same, natural ingredients that we've been using for more than 100 years.</p>
@@ -84,13 +81,13 @@
     function showContact() {
         hideAll()
         document.getElementById("contact").style.display = "block";
-        console.log("menu displayed")
+        console.log("contact displayed")
     }
 
     function showAbout() {
         hideAll()
         document.getElementById("about").style.display = "block";
-        console.log("menu displayed")
+        console.log("about displayed")
     }
 
 </script>
